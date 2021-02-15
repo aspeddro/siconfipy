@@ -1,0 +1,37 @@
+NAME=siconfipy
+
+installdev:
+	pip install -e .
+
+uninstall:
+	pip uninstall $(NAME) --yes
+
+install:
+	pip install .
+
+installtest:
+	pip uninstall $(NAME)
+	pip install --index-url https://test.pypi.org/simple/ $(NAME)
+
+clean:
+	rm -rf dist 
+	rm -rf build 
+	rm -rf siconfipy.egg-info
+
+format:
+	black .
+
+check:
+	twine check dist/*
+
+datasets:
+	python utils/build_datasets.py
+
+build:
+	python setup.py sdist
+
+testpublish: clean build format
+	twine upload --repository testpypi dist/*
+
+publish: clean build format
+	twine upload dist/*
