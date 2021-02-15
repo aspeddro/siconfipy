@@ -1,4 +1,5 @@
 import pandas as pd
+from .data import br_cods
 
 
 def find_cod(query=None):
@@ -27,7 +28,7 @@ def find_cod(query=None):
     if not type(query) in [str, int] and query is not None:
         raise TypeError("query must be str or int")
 
-    df = pd.read_json("siconfipy/data/br_cods.json")
+    df = br_cods
 
     if query is None:
         return df

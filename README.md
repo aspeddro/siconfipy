@@ -97,7 +97,7 @@ Acess basic information of the federation entities:
 get_info()
 ```
 
-`br_cods` provides results similar to `get_info()`, but with some corrections, see [`utils/build_dataset.py`](utils/build_dataset.py)
+`br_cods` provides results similar to `get_info()`, but with some corrections, see [`utils/build_datasets.py`](utils/build_datasets.py)
 
 > All data, as column name is in pt-BR, the [API](http://apidatalake.tesouro.gov.br/docs/siconfi/) does not provide an endpoint in en.
 
