@@ -33,5 +33,8 @@ build:
 testpublish: clean build format
 	twine upload --repository testpypi dist/*
 
+installtest:
+	pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple siconfipy
+
 publish: clean build format
 	twine upload dist/*
