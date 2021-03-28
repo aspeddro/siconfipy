@@ -62,7 +62,7 @@ or load functions
 from siconfipy import get_fiscal, get_budget, br_cods
 ```
 
-Fiscal management report for the state of Sao Paulo (`35`) for the first two months of 2020:
+Fiscal management report for the state of Sao Paulo (`35`) for the first four months of 2020:
 
 ```python
 get_fiscal(year=2020, period=1, cod=35)
@@ -76,7 +76,7 @@ Summary of the budget execution report for the state of Rio de Janeiro (`33`) of
 get_budget(year=2018, period=1, cod=33)
 ```
 
-Annual accounts statement of the Federal District (`53`) for 2019:
+Annual accounts statement of the Federal District (`53`) for 2018:
 
 ```python
 get_annual_acc(year=2018, cod=53)
