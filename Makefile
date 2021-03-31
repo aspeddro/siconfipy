@@ -1,7 +1,7 @@
 NAME=siconfipy
 
 installdev:
-	pip install -e .
+	pip install --user --no-use-pep517 -e .
 
 uninstall:
 	pip uninstall $(NAME) --yes

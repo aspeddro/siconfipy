@@ -91,7 +91,7 @@ def get_budget(year, period, cod, simple=False, annex=None):
         an_exercicio=year,
         nr_periodo=period,
         co_tipo_demonstrativo="RREO Simplificado" if simple else "RREO",
-        no_anexo=as_list(annex),
+        no_anexo=str_con("RREO-Anexo ", annex) if annex is not None else None,
         id_ente=cod,
     )
 
