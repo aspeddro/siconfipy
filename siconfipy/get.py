@@ -1,6 +1,5 @@
 from siconfipy.utils import fetch, as_list, str_con
 
-
 def get_fiscal(
     year, period, cod, freq="Q", annex=None, power=["E", "L", "J", "M", "D"]
 ):

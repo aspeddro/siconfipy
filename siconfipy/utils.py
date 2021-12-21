@@ -2,9 +2,12 @@ import pandas as pd
 from itertools import product
 from time import sleep
 from requests import get
-
+import numpy
 
 def api(type):
+    """
+    API endpoint
+    """
     return f"http://apidatalake.tesouro.gov.br/ords/siconfi/tt/{type}?"
 
 
@@ -23,7 +26,7 @@ def as_list(items):
     return [items] if type(items) is not list else items
 
 
-def str_con(*kwargs, sep=""):
+def str_con(a, b, sep=""):
     """
     Concat string
 
@@ -41,15 +44,11 @@ def str_con(*kwargs, sep=""):
 
     >>> str_conc("Hello", ["Jesse", "John"])
     """
-    a, b = kwargs
 
-    results = []
-
-    for i in as_list(a):
-        for r in as_list(b):
-            results.append(str(i) + str(sep) + str(r))
-
-    return results
+    return numpy.char.add(
+        numpy.array(a).astype(str),
+        numpy.array(b).astype(str)
+    )
 
 
 def fetch(**kwargs):
